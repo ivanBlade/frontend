@@ -1,0 +1,56 @@
+  <div class="container">
+    <div class="card-body">
+      <h5 class="card-title">{{titulo}}</h5>
+      <form>
+        <div class="form-group row mt-4">
+          <label for="producto" class="col-form-label col-sm-2">PRODUCTO</label>
+          <div class="col-sm-6">
+             <input type="text" class="form-control" name="producto" [(ngModel)] ="automotriz.producto">
+          </div>
+        </div>
+
+        <div class="form-group row mt-4">
+          <label for="marca" class="col-form-label col-sm-2">MARCA</label>
+          <div class="col-sm-6">
+             <input type="text" class="form-control" name="marca" [(ngModel)] ="automotriz.marca">
+          </div>
+        </div>
+
+        <div class="form-group row mt-4">
+          <label for="descripcion" class="col-form-label col-sm-2">DESCRIPCION</label>
+          <div class="col-sm-6">
+             <input type="text" class="form-control" name="descripcion" [(ngModel)] ="automotriz.descripcion">
+          </div>
+        </div>
+
+        <div class="form-group row mt-4">
+          <label for="color" class="col-form-label col-sm-2">COLOR</label>
+          <div class="col-sm-6">
+             <input type="text" class="form-control" name="color" [(ngModel)] ="automotriz.color">
+          </div>
+        </div>
+
+        <div class="form-group row mt-4">
+          <label for="precio" class="col-form-label col-sm-2">PRECIO</label>
+          <div class="col-sm-6">
+             <input type="number" class="form-control" name="precio" [(ngModel)] ="automotriz.precio">
+          </div>
+        </div>
+
+        <div class="form-group row mt-4">
+          <label for="peso" class="col-form-label col-sm-2">PESO</label>
+          <div class="col-sm-6">
+             <input type="number" class="form-control" name="peso" [(ngModel)] ="automotriz.peso">
+          </div>
+        </div>
+
+        <button class="btn btn-success" role="button" (click) ='create()' *ngIf ="!automotriz.id else elseBlock" >Registrar</button>
+        <ng-template #elseBlock>
+        <button class="btn btn-success" role="button" (click) ="update()">Actualizar</button>
+      </ng-template>
+      </form>
+    </div>
+  </div>
+
+
+

@@ -1,0 +1,36 @@
+<div class="container">
+<h1>{{titulo}}</h1>
+<h2>{{prueba}}</h2>
+
+<button class="btn btn-info" type="button" [routerLink]="['/automotrices/form']">Nuevo Producto</button>
+
+<table class="table">
+
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">PRODUCTO</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Color</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Peso</th>
+      <th scope="col">EDITAR</th>
+      <th scope="col">ELIMINAR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor ="let automotriz of automotrices">
+      <th scope="row"> {{automotriz.id}} </th>
+      <td>{{automotriz.producto}}</td>
+      <td>{{automotriz.marca}}</td>
+      <td>{{automotriz.descripcion}}</td>
+      <td>{{automotriz.color}}</td>
+      <td>{{automotriz.precio}}</td>
+      <td>{{automotriz.peso}}</td>
+      <td> <button type="button" name="button" class="btn btn-primary" [routerLink] ="['/automotrices/form', automotriz.id]">Editar</button> </td>
+      <td> <button class="btn btn-danger" (click) ="delete(automotriz)" >Eliminar</button> </td>
+    </tr>
+  </tbody>
+</table>
+</div>
